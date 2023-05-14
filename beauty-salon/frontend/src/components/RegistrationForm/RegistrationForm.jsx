@@ -44,8 +44,12 @@ export default function RegistrationForm({
       try {
         const response = await axios.put(`${HOST}/${client._id}`, clientData);
         if (response.status === 200) {
-          updateClient(response.data);
-          // cancelEdit();
+          updateClient(clientData);
+          setName("");
+          setEmail("");
+          setDate("");
+          setTime("");
+          // setClient(null);
         }
       } catch (error) {
         console.error(error);
