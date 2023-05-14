@@ -16,6 +16,6 @@ export const StyledRegistryDiv = styled.div`
 export const StyledListDiv = styled.div`
   flex: 1;
   flex-grow: 1;
-  /* height: 100vh; */
+
   background: radial-gradient(ellipse at center, var(--grey-color), #4f4647);
 `;
