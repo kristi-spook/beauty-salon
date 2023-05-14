@@ -60,7 +60,7 @@ export default function Registry() {
             client._id === updatedClient._id ? response.data : client
           )
         );
-        console.log(updateClient);
+
         setEditingClient(null);
       }
     } catch (error) {
@@ -97,3 +97,4 @@ export default function Registry() {
     </StyledMainDiv>
   );
 }
+
