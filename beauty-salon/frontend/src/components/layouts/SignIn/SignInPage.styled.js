@@ -27,7 +27,7 @@ export const StyledFormWrapper = styled.div`
   height: 70%;
   img {
     width: 40%;
-    padding-bottom: 20%;
+    padding-bottom: 50%;
   }
 `;
 
