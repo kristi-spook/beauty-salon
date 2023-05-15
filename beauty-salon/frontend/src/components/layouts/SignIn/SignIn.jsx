@@ -13,8 +13,10 @@ import {
 export default function SignIn() {
   const [stylistName, setStylistName] = useState("");
   const [password, setPassword] = useState("");
+  const [loginError, setLoginError] = useState(false);
 
   const navigate = useNavigate();
+
   const handleStylistNameChange = (event) => {
     setStylistName(event.target.value);
   };
@@ -27,10 +29,9 @@ export default function SignIn() {
     event.preventDefault();
     if (stylistName === "admin" && password === "password") {
       localStorage.setItem("isLoggedIn", true);
-      console.log("Logged In successfully");
       navigate("/registry");
     } else {
-      console.log("Invalid information");
+      setLoginError(true);
     }
   };
 
@@ -60,8 +61,14 @@ export default function SignIn() {
             />
             <button type="submit">Log In</button>
           </Styledform>
+          {loginError && (
+            <p style={{ color: "red" }}>
+              Invalid information. Please try again.
+            </p>
+          )}
         </StyledFormWrapper>
       </StyledSignInDiv>
     </StyledMainDiv>
   );
 }
+
